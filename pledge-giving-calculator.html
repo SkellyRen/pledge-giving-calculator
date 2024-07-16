@@ -1,0 +1,146 @@
+<div class="container giving-calculator">
+  <div class="col-md-9 text-center giving-calculator-title">
+      Calculate Here
+  </div>
+  
+  <div class="row giving-calculator-inline">
+      <div class="col-md-4">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-dollar-sign"></i></span>
+              <input type="tel" pattern="[0-9]*" novalidate class="form-control" id="normal-giving">
+          </div>
+      </div>
+      <div class="col-md-8 giving-calculator-label">
+          What I/we normally give in a year
+      </div>
+  </div>
+  
+  <div class="giving-calculator-plus">
+      +
+  </div>
+  
+  <div class="row giving-calculator-inline">
+      <div class="col-md-4">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-dollar-sign"></i></span>
+              <input type="tel" pattern="[0-9]*" novalidate class="form-control" id="expanded-giving">
+          </div>
+      </div>
+      <div class="col-md-8 giving-calculator-label">
+          My/Our expanded annual generosity for All Things New
+      </div>
+  </div>
+  
+  <div class="giving-calculator-plus">
+      =
+  </div>
+  
+  <div class="row giving-calculator-inline">
+      <div class="col-md-4">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-dollar-sign"></i></span>
+              <input type="tel" pattern="[0-9]*" novalidate class="form-control" id="2yrs" disabled>
+          </div>
+      </div>
+      <div class="col-md-1 giving-calculator-label text-right">
+        x2 years =
+      </div>
+      <div class="col-md-4">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-dollar-sign"></i></span>
+              <input type="tel" pattern="[0-9]*" novalidate class="form-control" id="2yrs-total" disabled>
+          </div>
+      </div>
+  </div>
+
+  <div class="row giving-calculator-plus">
+      <div class="col-md-5"></div>
+      <div class="col-md-4">
+          +
+      </div>
+  </div>
+  
+  <div class="row giving-calculator-inline">
+      <div class="col-md-5 giving-calculator-label text-right">
+        <div>Gifts from my/our stored resources</div>
+        <div>(savings, stocks, real estate, other assets)</div>
+      </div>
+      <div class="col-md-4">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-dollar-sign"></i></span>
+              <input type="tel" pattern="[0-9]*" novalidate class="form-control" id="stored-resources">
+          </div>
+      </div>
+  </div>
+  
+  <div class="container col-md-9">
+      <div class="text-center giving-calculator-totaltitle">
+          My / Our Two-Year Commitment
+      </div>
+  
+      <div class="text-center giving-calculator-grandtotal" id="pledge-commitment">
+      </div>
+  
+      <div class="text-center">
+          March 2021 - March 2023
+      </div>
+  </div>
+</div>
+
+<script>
+  // Execute calculate function on entry to these fields
+  $(function(){ 
+      $('#normal-giving, #expanded-giving, #stored-resources').on('keyup', calculate);
+  });
+
+  // Calculate Function
+  function calculate(){
+      // Get the input elements
+      var normalGivingInput = $('#normal-giving');
+      var expandedGivingInput = $('#expanded-giving');
+      var storedResourcesInput = $('#stored-resources');
+      var twoYearsInput = $('#2yrs');
+      var twoYearsTotalInput = $('#2yrs-total');
+      var commitmentDisplay = $('#pledge-commitment');
+
+      // Ensure input elements are found
+      if(normalGivingInput.length && expandedGivingInput.length && storedResourcesInput.length && twoYearsInput.length && twoYearsTotalInput.length && commitmentDisplay.length) {
+          var fieldnormal = normalGivingInput.val();
+          var fieldexpanded = expandedGivingInput.val();
+          var fieldstored = storedResourcesInput.val();
+        
+          // Parse input values as floats
+          var normal = parseFloat(fieldnormal) || 0;
+          var expanded = parseFloat(fieldexpanded) || 0;
+          var stored = parseFloat(fieldstored) || 0;
+          
+          // Subtotal Calculation as variable
+          var subtotal = normal + expanded;
+          // Two Year Calculation as variable
+          var twoyears = subtotal * 2;
+          
+          // Determine if stored resources field exists and if so, add it to the total commitment number.
+          var commitment;
+          if(!isNaN(stored)) {
+              commitment = twoyears + stored;
+          } else {
+              commitment = twoyears;
+          }
+        
+          // Fill HTML form field values if there are numbers on normal and expanding giving fields
+          if(!isNaN(normal) && !isNaN(expanded)) {
+              twoYearsInput.val(subtotal.toFixed(2));
+              twoYearsTotalInput.val(twoyears.toFixed(2));
+              commitmentDisplay.html('$' + commitment.toFixed(2));
+              //$('input[id="ctl00_main_ctl43_ctl03_ctl06_attribute_field_44372"]').val(commitment.toFixed(2));
+              //$('input[id="ctl00_main_ctl09_ctl02_ctl00_tbTotalAmount"]').val(commitment.toFixed(2));
+          } else {
+              twoYearsInput.val("");
+              twoYearsTotalInput.val("");
+              commitmentDisplay.html("");
+              //$('input[id="ctl00_main_ctl43_ctl03_ctl06_attribute_field_44372"]').val("");
+              //$('input[id="ctl00_main_ctl09_ctl02_ctl00_tbTotalAmount"]').val("");
+          }
+      }
+  }
+</script>
