@@ -1,4 +1,4 @@
-/* Global reset and font */
+/* Global styling */
 body {
   background-color: #121212;
   color: #eaeaea;
@@ -6,61 +6,73 @@ body {
   padding: 2rem;
 }
 
-/* Main container */
+/* Calculator wrapper with light form inside */
 .giving-calculator {
-  background-color: #1e1e1e;
+  background-color: #ffffff;
+  color: #212529;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Section divider symbols */
+/* Divider symbols */
 .giving-calculator-plus {
   font-size: 2rem;
-  color: #888;
+  color: #555;
   text-align: center;
   margin: 1rem 0;
 }
 
-/* Labels */
+/* Labels next to form fields */
 .giving-calculator-label {
   font-size: 0.95rem;
-  color: #ccc;
+  color: #333;
   margin-top: 0.5rem;
 }
 
-/* Total title and output */
+/* Totals title and output */
 .giving-calculator-totaltitle {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-top: 2rem;
-  color: #ddd;
-}
-
-.giving-calculator-grandtotal {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #0d6efd; /* Bootstrap primary blue */
+  color: #333;
   margin-bottom: 0.5rem;
 }
 
-/* Inputs and groups */
+.giving-calculator-grandtotal {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0d6efd;
+  margin-bottom: 0.25rem;
+}
+
+/* Input styling */
 .input-group input.form-control {
-  background-color: #2a2a2a;
-  color: #fff;
-  border: 1px solid #444;
+  background-color: #f8f9fa;
+  color: #212529;
+  border: 1px solid #ced4da;
   border-radius: 4px;
 }
 
 .input-group .input-group-addon,
 .input-group-text {
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  color: #ccc;
+  background-color: #e9ecef;
+  color: #495057;
+  border: 1px solid #ced4da;
   border-radius: 4px 0 0 4px;
 }
 
-/* Ensure inline rows behave on all screen sizes */
+/* Tightens up spacing */
 .giving-calculator-inline {
   margin-bottom: 1.5rem;
+}
+
+/* Smaller and lighter final section */
+.giving-calculator .container.col-md-9 {
+  background-color: #f1f3f5;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  text-align: center;
 }
