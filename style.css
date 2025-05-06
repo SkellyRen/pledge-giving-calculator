@@ -1,0 +1,78 @@
+/* Pledge Giving Calculator - Modern Styling */
+
+.giving-calculator {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 3rem auto;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #333;
+}
+
+.giving-calculator-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 2rem;
+}
+
+.giving-calculator-inline {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.input-group input {
+  font-size: 1.2rem;
+  padding: 0.75rem;
+  border: 2px solid #ced4da;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.giving-calculator-label {
+  font-size: 1rem;
+  padding-left: 1rem;
+  flex: 1;
+  color: #555;
+}
+
+.giving-calculator-plus {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6c757d;
+  margin: 1rem 0;
+}
+
+.giving-calculator-totaltitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #343a40;
+}
+
+.giving-calculator-grandtotal {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .giving-calculator-inline .col-md-4,
+  .giving-calculator-inline .col-md-8,
+  .giving-calculator-inline .col-md-1,
+  .giving-calculator-plus .col-md-4,
+  .giving-calculator-plus .col-md-5 {
+    flex: 0 0 auto;
+  }
+}
