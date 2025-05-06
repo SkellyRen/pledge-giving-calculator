@@ -1,9 +1,11 @@
 # 🧮 Giving Calculator
 
-Welcome! This is a simple, responsive **Giving Calculator** built with **HTML**, **Bootstrap**, **Font Awesome**, and **jQuery**.  
+Welcome! This is a simple, responsive **Giving Calculator** built with **HTML**, **Bootstrap**, and **jQuery**.  
 It helps you quickly calculate a two-year generosity pledge — inspired by the same style used by **Generis Financial consultants** for paper commitment cards. ✍️
 
 Perfect for church campaigns, stewardship drives, or any initiative where you're collecting giving pledges! 🙌
+
+🚀 [**Live Demo Here**](https://skellyren.github.io/pledge-giving-calculator/)
 
 ---
 
@@ -14,7 +16,7 @@ Perfect for church campaigns, stewardship drives, or any initiative where you're
   - How much you plan to expand
   - Any gifts from stored resources (like savings, stocks, or real estate)
 - ⚡ **Real-time math magic** — totals update instantly as you type
-- 📱 **Mobile-friendly layout** using Bootstrap 3
+- 📱 **Mobile-friendly layout** using Bootstrap
 - 🎨 **Sleek interface** with Font Awesome icons
 
 ---
@@ -22,8 +24,7 @@ Perfect for church campaigns, stewardship drives, or any initiative where you're
 ## 🛠️ Technologies Used
 
 - **HTML5**
-- **Bootstrap 3** (CSS framework)
-- **Font Awesome** (for those shiny dollar signs 💵)
+- **Bootstrap** (CSS framework)
 - **jQuery** (for live calculation updates)
 
 ---
@@ -58,7 +59,6 @@ Everything updates automatically — no button clicks required! 🔥
 
 - **HTML** → Defines the form layout and input fields
 - **Bootstrap** → Styles the layout responsively
-- **Font Awesome** → Adds a polished visual touch
 - **jQuery** → Powers the real-time calculations
 
 ---
